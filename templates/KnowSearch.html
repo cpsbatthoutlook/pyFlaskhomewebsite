@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+{% block title %}
+
+  {{ title }}
+{% endblock %}
+{% block content %}
+
+	</head> <body>
+
+<form method="post" action="/cgi-bin/Know/KnowSearch.cgi" enctype="multipart/form-data">
+<input type=text name=category maxlength=20 size=20 value="%Pandas%">&nbsp&nbsp&nbsp&nbsp&nbsp<input type="submit" name="Go" value="Select" /><a href="/cgi-bin/Know/KnowAdd.cgi">  Add </a></form><table width=100% border=0 cellspacing=1 cellpadding=1 name=First><tr><th>Category</th><th>Subcategory</th><th>Subject</th></tr><tr><td>Linux</td><td>Administration</td><td><a href="./KnowView.cgi?ID=1806"> ubuntu configurations - monitoring laptop (with tweaking notes) - 2020 Dell / Vagrant-Ubuntu </a><tr><td>Linux</td><td>Commands</td><td><a href="./KnowView.cgi?ID=99911272"> Dell Inspiron 1010 - Centos7 install - on USB / Knoppix 8.6 </a><tr><td>Linux</td><td>Script</td><td><a href="./KnowView.cgi?ID=99911310"> voice: Cloud9 API script { curl }  </a><tr><td>Python</td><td>Administration</td><td><a href="./KnowView.cgi?ID=99911284"> Pandas: Voice: Filesize analysis </a><tr><td>Python</td><td>Administration</td><td><a href="./KnowView.cgi?ID=99911297"> Pandas:Voice: Filesize analysis part-2  (du -sm ;perl ,pd.concat, df.diff, df.div, df.round,df.renam </a><tr><td>Python</td><td>Commands</td><td><a href="./KnowView.cgi?ID=99911275"> Pandas 7 Functions to Reduce Your Data Manipulation Stress </a><tr><td>Python</td><td>Commands</td><td><a href="./KnowView.cgi?ID=99911300"> Pandas:  helpful subroutines  </a><tr><td>Python</td><td>Commands</td><td><a href="./KnowView.cgi?ID=99911287"> Pandas:  SQL equivalent command </a><tr><td>Python</td><td>Commands</td><td><a href="./KnowView.cgi?ID=99911269"> Pandas: Hands-On Data Analysis with Pandas  </a><tr><td>Python</td><td>Commands</td><td><a href="./KnowView.cgi?ID=99911312"> Pandas: Jupyter Ju[lia]Pyt[hon]R [magic cmd], kbd shrtcut, plotting, Docker, theme, extens </a><tr><td>Python</td><td>Commands</td><td><a href="./KnowView.cgi?ID=99911299"> Pandas: Merge, concat, append  </a><tr><td>Python</td><td>Commands</td><td><a href="./KnowView.cgi?ID=99911298"> pandas: Network traffic from dynatrace </a><tr><td>Python</td><td>Commands</td><td><a href="./KnowView.cgi?ID=99911281"> Pandas: Plotting.. Seaborn,  matplotlib, plotly, lux, jupyter ipython widgets </a><tr><td>Python</td><td>Commands</td><td><a href="./KnowView.cgi?ID=99911311"> Pandas: Prettifying pandas DataFrames - Data Science - Enhance your DataFrames  </a><tr><td>Python</td><td>Commands</td><td><a href="./KnowView.cgi?ID=99911270"> Pandas: References  Jupyter notebook   |  Web Scraping | Statistics  </a><tr><td>Python</td><td>Commands</td><td><a href="./KnowView.cgi?ID=99911306"> Pandas:Voice: Redbox Message Broker analysis [pd.cut, bins, timedelta_toHHMMSS],  </a><tr><td>Python</td><td>General</td><td><a href="./KnowView.cgi?ID=99911282"> Pandas: read_sql  </a></th></tr></table><p /> # of rows found : 17	
+
+
+
+{% endblock %}

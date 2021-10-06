@@ -1,0 +1,54 @@
+{% extends "layout.html" %}
+{% block title %}
+    {{ title }}
+{% endblock title %}
+{% block content %}
+
+
+
+<form method="post" action="/cgi-bin/Know/Know.cgi" enctype="multipart/form-data">
+    <select name="category" >
+    <option value="Apache">Apache</option>
+    <option value="Cgi">Cgi</option>
+    <option value="Communication">Communication</option>
+    <option value="Epicentric">Epicentric</option>
+    <option value="Excel">Excel</option>
+    <option value="Food">Food</option>
+    <option value="HTML">HTML</option>
+    <option value="iLdap">iLdap</option>
+    <option value="iProxy">iProxy</option>
+    <option value="iWebserver">iWebserver</option>
+    <option selected="selected" value="Java">Java</option>
+    <option value="Linux">Linux</option>
+    <option value="Microsoft">Microsoft</option>
+    <option value="Mq">Mq</option>
+    <option value="Msql">Msql</option>
+    <option value="Music">Music</option>
+    <option value="Python">Python</option>
+    <option value="Websphere">Websphere</option>
+    <option value="Rental">Rental</option>
+    <option value="Sol10">Sol10</option>
+    <option value="Legal">Legal</option>
+    <option value="Efficiency">Efficiency</option>
+    <option value="SysAdmin">SysAdmin</option>
+    <option value="OpenLDAP">OpenLDAP</option>
+    <option value="OpenSSH">OpenSSH</option>
+    <option value="OpenSSL">OpenSSL</option>
+    <option value="Oracle">Oracle</option>
+    <option value="Others">Others</option>
+    <option value="Perl">Perl</option>
+    <option value="Personal">Personal</option>
+    <option value="PHP">PHP</option>
+    <option value="Solaris">Solaris</option>
+    <option value="Sports">Sports</option>
+    <option value="Taxes">Taxes</option>
+    <option value="Veritas">Veritas</option>
+    <option value="Virtualization">Virtualization</option>
+    <option value="VeritasCluster">VeritasCluster</option>
+    <option value="Weblogic">Weblogic</option>
+    <option value="Word">Word</option>
+    </select>&nbsp&nbsp&nbsp&nbsp&nbsp<input type="submit" name="Go" value="Select" /><a href="/cgi-bin/Know/KnowSearch.cgi"> Search </a>&nbsp&nbsp&nbsp&nbsp&nbsp<a href="/cgi-bin/bookmarks.cgi"> Bookmarks </a>&nbsp&nbsp&nbsp&nbsp&nbsp</form><table width=100% border=0 cellspacing=1 cellpadding=1 name=First><tr><th>Subcategory</th><th>Subject</th></tr><tr><td>Administration</td><td><a href="./KnowView.cgi?ID=1274"> All details about the visitor&#39;s browser script </a><tr><td>Administration</td><td><a href="./KnowView.cgi?ID=1553"> another example of beans in session - jsp </a><tr><td>Administration</td><td><a href="./KnowView.cgi?ID=1390"> Another excellent servlet filter  --- name html to jsp </a><tr><td>Administration</td><td><a href="./KnowView.cgi?ID=1293"> ant build.xml &amp; install </a><tr><td>Administration</td><td><a href="./KnowView.cgi?ID=1894"> classes with Vijay </a><tr><td>Administration</td><td><a href="./KnowView.cgi?ID=1606"> Installing Grinder3 on Linux - personal (Windows|kNOPPIX setup included) </a><tr><td>Administration</td><td><a href="./KnowView.cgi?ID=1604"> Installing jython2.2  on Linux server </a><tr><td>Administration</td><td><a href="./KnowView.cgi?ID=432"> installing Tomcat - also notes about 5.5 </a><tr><td>Administration</td><td><a href="./KnowView.cgi?ID=2210"> Jboss :  JBoss Cores Services httpd distribution (HTTP Server) (JBCS) </a><tr><td>Administration</td><td><a href="./KnowView.cgi?ID=2211"> Jboss:  EWS Setup  (HTTP Server)  </a><tr><td>Administration</td><td><a href="./KnowView.cgi?ID=1581"> parsing txt file in Jython and then putting in Mysql database </a><tr><td>Administration</td><td><a href="./KnowView.cgi?ID=1270"> Servlet  basic - 2 </a><tr><td>Administration</td><td><a href="./KnowView.cgi?ID=1454"> Using CSV Files as Databases and Interacting with Them Using Java </a><tr><td>Commands</td><td><a href="./KnowView.cgi?ID=1350"> ant &amp; Logger &amp; Database applications </a><tr><td>Commands</td><td><a href="./KnowView.cgi?ID=1143"> Assignment 1 : Java JFrame </a><tr><td>Commands</td><td><a href="./KnowView.cgi?ID=1128"> CXEC : CastTest </a><tr><td>Commands</td><td><a href="./KnowView.cgi?ID=1129"> CXEC ConstructorTest </a><tr><td>Commands</td><td><a href="./KnowView.cgi?ID=1126"> CXEC Lab1 </a><tr><td>Commands</td><td><a href="./KnowView.cgi?ID=1130"> CXEC PackageTest3 </a><tr><td>Commands</td><td><a href="./KnowView.cgi?ID=1131"> CXEC PolymorphismTest </a><tr><td>Commands</td><td><a href="./KnowView.cgi?ID=2028"> dundee: checking # of threads using Jython {tried} </a><tr><td>Commands</td><td><a href="./KnowView.cgi?ID=1486"> HashMap utilization </a><tr><td>Commands</td><td><a href="./KnowView.cgi?ID=1989"> IBM: Using JDBC to extract data into XMLLegacy data can enter the XML age with ease   </a><tr><td>Commands</td><td><a href="./KnowView.cgi?ID=1501"> JVM Heap options &amp; (IBM supplied explanation) </a><tr><td>Commands</td><td><a href="./KnowView.cgi?ID=1577"> jython: classes </a><tr><td>Commands</td><td><a href="./KnowView.cgi?ID=1580"> python script to graph the Grinder3/2 output - using ploticus </a><tr><td>General</td><td><a href="./KnowView.cgi?ID=1276"> 330 tips for Java </a><tr><td>General</td><td><a href="./KnowView.cgi?ID=1389"> examples of beans  in session </a><tr><td>General</td><td><a href="./KnowView.cgi?ID=784"> JAR Files FAQ </a><tr><td>General</td><td><a href="./KnowView.cgi?ID=698"> Java : handling exceptions </a><tr><td>General</td><td><a href="./KnowView.cgi?ID=723"> Java class related FAQ </a><tr><td>General</td><td><a href="./KnowView.cgi?ID=783"> JAVA I/O REDIRECTION </a><tr><td>General</td><td><a href="./KnowView.cgi?ID=699"> java streams basic </a><tr><td>General</td><td><a href="./KnowView.cgi?ID=1836"> Java: First Java Class - with EI - Mohammad </a><tr><td>General</td><td><a href="./KnowView.cgi?ID=1833"> Java: How do I convert a String to an int with Java?  toInt() </a><tr><td>General</td><td><a href="./KnowView.cgi?ID=1838"> Java: Struts - with EI - Mohammad </a><tr><td>General</td><td><a href="./KnowView.cgi?ID=1384"> JDBC—The Java Database API - primer </a><tr><td>General</td><td><a href="./KnowView.cgi?ID=724"> Loading from Properties.txt </a><tr><td>General</td><td><a href="./KnowView.cgi?ID=2220"> Maven settings.xml  in ~/.m2 folder for POM </a><tr><td>General</td><td><a href="./KnowView.cgi?ID=781"> SECURE COMMUNICATION WITH JSSE </a><tr><td>General</td><td><a href="./KnowView.cgi?ID=735"> servlet basics </a><tr><td>General</td><td><a href="./KnowView.cgi?ID=418"> switch example </a><tr><td>General</td><td><a href="./KnowView.cgi?ID=1142"> Timer task : schedule the  tasks : TIP </a><tr><td>General</td><td><a href="./KnowView.cgi?ID=780"> USING HTTPURLCONNECTION TO ACCESS WEB PAGES </a><tr><td>General</td><td><a href="./KnowView.cgi?ID=782"> USING RANDOM NUMBERS FOR TESTING AND SIMULATION </a><tr><td>General</td><td><a href="./KnowView.cgi?ID=1981"> Webservice tutorials (ibm) </a><tr><td>Performance</td><td><a href="./KnowView.cgi?ID=99911225"> Http11nioProtocol vs Http11Protocol - Tomcat  BIO vs NIO </a><tr><td>Performance</td><td><a href="./KnowView.cgi?ID=1500"> Improving Java Application Performance and Scalability by Reducing Garbage Collection </a><tr><td>Performance</td><td><a href="./KnowView.cgi?ID=2136"> Java GC viewer (Redhat) and Gitbug </a><tr><td>Performance</td><td><a href="./KnowView.cgi?ID=1295"> JMeter and Ant Integration </a></th></tr></table>
+
+        
+
+{% endblock content %}

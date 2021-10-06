@@ -1,0 +1,20 @@
+{% extends "layout.html" %}
+{% block title %}
+ {{ title }}
+
+{% endblock %}
+{% block content %}
+
+
+<h3>View Database</h3><br /><table width=100% border=0 cellspacing=1 cellpadding=1 name=First><tr><th>Category</th><th>Subcategory</th><th>Subject</th><th>Edit</th></tr><tr><td>Java</td><td>Administration</td><td>Installing Grinder3 on Linux - personal (Windows|kNOPPIX setup included)</td><td><a href="/cgi-bin/Know/KnowAdd.cgi?Edit=Y&amp;ID=1606">Edit</a></th></tr></table><br /><PRE>    unzip the /Shared/Big/WorkLaptop/MyPrograms/Grinder3/grinder-3.0-beta33.zip
+copy the directory into common place { under /jython directory in our case }
+Create the following files { /jython }
+java -cp $CLASSPATH net.grinder.Console
+    
+    ==================== startProxy.sh ===================
+    #!/bin/bash 
+    . /opt/jython/grinder/setGrinderEnv.sh
+    java -cp $CLASSPATH net.grinder.TCPProxy -console -http &gt; grinder.py
+ </PRE><a href="/cgi-bin/Know/Know.cgi"> Go Back </a>
+
+{% endblock %}
