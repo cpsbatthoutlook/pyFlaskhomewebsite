@@ -5,63 +5,34 @@
 {% block content %}
 
 
-<form method="post" action="/cgi-bin/Know/KnowAdd.cgi" enctype="multipart/form-data">
-<p /><h3>Adding new record</h3><hr />Category&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<select name="Category" >
+<form method="post" action="" enctype="multipart/form-data">
+<p /><h3>{{ legend }} record</h3><hr />Category&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<select name="category" >
 <option value="Apache">Apache</option>
 <option value="Cgi">Cgi</option>
 <option value="Communication">Communication</option>
-<option value="Epicentric">Epicentric</option>
-<option value="Excel">Excel</option>
-<option value="Food">Food</option>
-<option value="HTML">HTML</option>
-<option value="iLdap">iLdap</option>
-<option value="iProxy">iProxy</option>
-<option value="iWebserver">iWebserver</option>
-<option value="Java">Java</option>
-<option selected="selected" value="Linux">Linux</option>
-<option value="Meher">Meher</option>
-<option value="Microsoft">Microsoft</option>
-<option value="Mq">Mq</option>
-<option value="Msql">Msql</option>
-<option value="Music">Music</option>
-<option value="Python">Python</option>
-<option value="Websphere">Websphere</option>
-<option value="Rental">Rental</option>
-<option value="Sol10">Sol10</option>
-<option value="Legal">Legal</option>
-<option value="Efficiency">Efficiency</option>
-<option value="SysAdmin">SysAdmin</option>
-<option value="OpenLDAP">OpenLDAP</option>
-<option value="OpenSSH">OpenSSH</option>
-<option value="OpenSSL">OpenSSL</option>
-<option value="Oracle">Oracle</option>
-<option value="Others">Others</option>
-<option value="Perl">Perl</option>
-<option value="Personal">Personal</option>
-<option value="PHP">PHP</option>
-<option value="Solaris">Solaris</option>
-<option value="Sports">Sports</option>
-<option value="Taxes">Taxes</option>
-<option value="Veritas">Veritas</option>
-<option value="VeritasCluster">VeritasCluster</option>
-<option value="Virtualization">Virtualization</option>
-<option value="Weblogic">Weblogic</option>
-<option value="Word">Word</option>
-</select>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspSubcategory  &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<select name="Subcategory" >
-<option value="Administration">Administration</option>
-<option value="Backup">Backup</option>
-<option selected="selected" value="Commands">Commands</option>
-<option value="General">General</option>
-<option value="Hardware">Hardware</option>
-<option value="Mail">Mail</option>
-<option value="Network">Network</option>
-<option value="Performance">Performance</option>
 <option value="Script">Script</option>
 <option value="Security">Security</option>
 <option value="Troubleshoot">Troubleshoot</option>
-</select>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<br /><br />Subject  &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input type=text name=Subject maxlength=100 size=100 value="Please enter subject"><br /><br />Description  <br /><textarea name=Description rows=30 cols=90> Brief Desription </textarea><br /><input type="hidden" name="ID" value=""  /><p /><input type="submit" name="Add" value="Add Record" />&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input type="reset"  name="Reset" value="Reset" /></form>	
 
+</select>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<br /> 
 
+<br />
+<input id='id' type="hidden" value= {{ form.id }} >
 
+<div class="form-group">        
+    {{ form.subcategory.label(class="form-control-label") }}
+    {{ form.subcategory(class="form-control-label form-control-lg") }}
+</div>
+ 
+<div class="form-group">        
+    {{ form.subject.label(class="form-control-label") }}
+    {{ form.subject(class="form-control-label form-control-lg") }}
+</div>
+<div class="form-group">        
+    {{ form.description.label(class="form-control-label") }}
+    {{ form.description(class="form-control-label form-control-lg") }}
+</div>
+<div class="form-group"> {{ form.submit(class="btn btn-outline-info")}} </div>     
+<input type="reset"  name="Reset" value="Reset" /></form>	
 
 {% endblock %}
