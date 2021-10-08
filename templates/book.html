@@ -1,0 +1,40 @@
+{% extends "booklayout.html" %}
+{% block title %}
+ {{ title }}
+{% endblock %}
+{% block content %}
+
+<form method='POST' action="">
+    <p>Select any catagory <select name="catagories" >
+        <option value="Apache">Apache</option>
+        <option value="Websphere">Websphere</option>
+        </select><p /><input type="submit" name="Select" value="Go for it" /> 
+    <a href="/bookmarkview/1/update">Add Bookmarks</a>    
+</form>
+
+<TABLE width=99% border=1><TR ALIGN=LEFT bgcolor=yellow ></TR><TH ALIGN=LEFT>
+    Category
+</TH> 
+<TH ALIGN=LEFT>
+    Details
+</TH> <TH ALIGN=LEFT>Edit</TH> <TH ALIGN=LEFT>Delete</TH></TR>
+
+{% for f  in form %}
+<div class="form-group">
+    <TR><TD>
+        {{f.category }}</TD>
+     <TD><a href="http://developer.yahoo.com/yui/theater/">
+        {{f.details}}
+    </a></TD> 
+    <TD><a href="/book/{{ f.id }}/update">Edit? </a></TD>
+     <TD><a href="/book/{{ f.id }}/delete">Delete? </a></TD></TR>
+</div>
+     {% endfor %}
+
+</TABLE>
+   
+     First &nbsp&nbsp&nbsp Prev &nbsp&nbsp&nbsp1 &nbsp&nbsp&nbsp<a href="http://192.168.0.172/cgi-bin/bookmarks.cgi?pid=2&amp;Key=SysAdmin">2</a> &nbsp&nbsp&nbsp<a href="http://192.168.0.172/cgi-bin/bookmarks.cgi?pid=2&amp;Key=SysAdmin">Next</a> &nbsp&nbsp&nbsp<a href="http://192.168.0.172/cgi-bin/bookmarks.cgi?pid=2&amp;Key=SysAdmin">Last</a> &nbsp&nbsp&nbsp</div>
+    
+
+{% endblock content %}
+
