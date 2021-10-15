@@ -1,11 +1,19 @@
 # https://learning-oreilly-com.ezproxy.torontopubliclibrary.ca/library/view/flask-framework-cookbook/9781789951295/72adba2d-b200-46cf-9a6a-ba744eb71fff.xhtml
 from flask import Flask
+from flask_login import LoginManager ##Flask based Authentication
 from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI']='sqlite:///test.db'
 app.config['SECRET_KEY'] = 'c1ecc4ba444d91d97d0da200bdde1da7' 
 db = SQLAlchemy(app)
+
+##Flask based Authentication # https://learning-oreilly-com.ezproxy.torontopubliclibrary.ca/library/view/flask-framework-cookbook/9781789951295/1d540388-bc11-41fd-a236-2b911a2fd1d0.xhtml
+login_manager = LoginManager()
+login_manager.init_app(app)
+login_manager.login_view = 'auth.auth_login'
+##
+
 
 from my_app.catalog.views import catalog_blueprint  #Blueprint
 from my_app.hello.views import hello #  Blueprint

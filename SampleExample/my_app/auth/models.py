@@ -16,6 +16,26 @@ class User(db.Model):
     def check_password(self, password):
         return check_password_hash(self.pwdhash, password)
 
+    ##Flask based Authentication 
+    @property
+    def is_authenticated(self):
+        return True
+    
+    @property
+    def is_active(self):
+        return True
+    
+    @property
+    def is_anonymous(self):
+        return False
+    
+    # @property : to remove TypeError: 'str' object is not callable issue
+    def get_id(self):
+        return str(self.id)
+        # return self.id
+    
+    ##Flask based Authentication  finished
+
 class RegistrationForm(FlaskForm):
     username = TextField('Username', validators=[InputRequired()])
     password = PasswordField('Password', validators=[InputRequired(), EqualTo('confirm', message='Passwords mush match')])

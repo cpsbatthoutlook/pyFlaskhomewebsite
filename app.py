@@ -5,7 +5,8 @@ from datetime import datetime
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'c1ecc4ba444d91d97d0da200bdde1da7'  #To protect from attacks  python -m secrets  "secrets.token_hex(16)"
-app.config['SQLALCHEMY_DATABASE_URI']='sqlite:///site.db'   #use Sqlite location for SQLAlchemy
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mariadb+mariadbconnector://operator:tej1nder@192.168.0.172:3306/Server' ##MariaDB entry
+#app.config['SQLALCHEMY_DATABASE_URI']='sqlite:///site.db'   #use Sqlite location for SQLAlchemy
 db = SQLAlchemy(app)  ##Instantiate DB, python > from app import db, db.create_all()
 
 @app.route("/")

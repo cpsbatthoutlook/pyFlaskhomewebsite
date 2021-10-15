@@ -15,6 +15,9 @@
        rel="stylesheet"> 
   </head> 
   <body> 
+    {% if current_user.is_authenticated %}
+    "You are authenticated " {{ current_user.username}}
+    {% endif %}
     <div class="navbar navbar-inverse navbar-fixed-top" 
        role="navigation"> 
       <div class="container"> 
