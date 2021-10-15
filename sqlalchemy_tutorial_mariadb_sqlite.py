@@ -25,7 +25,7 @@ class Bookmarks(db.Model):
 # db.session.commit() # This is needed to write the changes to database
 Bookmarks.query.all()
 
-#Paginate
+#Paginate  https://flask-sqlalchemy.palletsprojects.com/en/2.x/api/?highlight=paginate#flask_sqlalchemy.BaseQuery.paginate
 xx=Bookmarks.query.paginate(per_page=30)
 xx.per_page  ##per page
 xx.page   ##Current
@@ -36,4 +36,18 @@ for x in xx.items: ##List items
 
 for x in xx.iter_pages(): ## list pages
     print(x)
+
+# Create Drop tables https://flask-sqlalchemy.palletsprojects.com/en/2.x/binds/
+Bookmarks.create_all()
+Bookmarks.drop_all()
+
+
+#  SELECT WHERE  : https://flask-sqlalchemy.palletsprojects.com/en/2.x/queries/
+Bookmarks.query.filter_by(catagory='Apache').all()  ## first(), 
+Bookmarks.query.get(1)  #by primary key
+Bookmarks.query.limit(1).all()  ## limit
+Bookmarks.query.order_by(User.username).all() # ORDER by
+Bookmarks.query.filter(Bookmarks.catagory.endswith('e')).all() # like %e
+
+
 

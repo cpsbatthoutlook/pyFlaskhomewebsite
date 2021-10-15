@@ -1,6 +1,5 @@
-from flask import Flask, redirect, render_template, url_for, request
+from flask import Flask, redirect, render_template, url_for, request, session
 from bookform import BookmarksForm
-# from bookmodels import BookmarksModel
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
 
@@ -13,18 +12,28 @@ db = SQLAlchemy(app)  ##Instantiate DB, python > from app import db, db.create_a
 @app.route("/", methods=['GET', 'POST'])
 # @app.route("/book", methods=['GET', 'POST'])
 def home():
-    # data = Bookmarks.query.all()   ## removed for paginating
+    # form=BookmarksForm()
+    if request.method == 'POST':
+        session['option'] =request.form['category']
+    else:
+        try:          
+         if session['option'] == None:
+            session['option']='Python'
+        except :
+            session['option']='Python'
+        
     page = request.args.get('page', 1, type=int)
-    data = Bookmarks.query.paginate(page=page) #Start paginating
-    return render_template('book.html', title='list of Bookmarks', form=data)
+    data = Bookmarks.query.filter_by(catagory=session['option']).paginate(page=page) #Start paginating
+    return render_template('book.html', title=session['option'], form=data)
 
 @app.route("/book/", methods=['GET', 'POST'])
 # @app.route("/book/<int:id>/update", methods=['GET', 'POST'])
 # def bookedit(id):
 def bookedit1():
     form=BookmarksForm()
-    if form.is_submitted():
-        rec=BookmarksModel(catagory=form.catagory.data, details=form.details.data, url=form.url.data)
+    if form.is_submitted() and  request.method == 'POST':
+        # return "%s %s %s" % (request.form.get("catagory"), form.url.data, form.details.data)
+        rec=Bookmarks(catagory=request.form.get('catagory'), details=form.details.data, url=form.url.data)
         db.session.add(rec)
         db.session.commit()
         return redirect(url_for('home'))
@@ -35,7 +44,8 @@ def bookedit(id):
     form=BookmarksForm()
     rec=Bookmarks.query.get_or_404(id)
     if form.is_submitted():
-        rec.catagory=form.catagory.data
+        # rec.catagory=form.catagory.data
+        rec.catagory=request.form.get('catagory')
         rec.details=form.details.data
         rec.id=id
         rec.url = form.url.data
@@ -54,9 +64,10 @@ class Bookmarks(db.Model):
     details = db.Column(db.String(100), unique=False, nullable=False)
     inserttime = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
     url = db.Column(db.String(120), unique=True)
-    def __init__(self, Bookmarksname, email):
+    def __init__(self, catagory, details, url):
         self.catagory = catagory
         self.details = details
+        self.url = url
     def __repr__(self):
         return '<Bookmarks %r>' % self.details    
 
